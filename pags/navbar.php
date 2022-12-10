@@ -21,13 +21,12 @@
                 </div>
             </div>
             <div class="d-none d-lg-flex">
-                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
-                <a href="carrinho.php" ><i class="bi bi-cart text-primary"> </i></a>
-                </div>
-                
-                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
-                    <a href="login.php"><i class="bi bi-person-fill text-primary"></i></a>
-                </div>
+                <a href="carrinho.php" >
+                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle mx-2"><i class="bi bi-cart text-primary"></i></div>
+                </a>
+                <a href="login.php">
+                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle"><i class="bi bi-person-fill text-primary"></i></div>
+                </a>
                 <div class="ps-3">
                     <small class="text-primary mb-0"><?php ?></small>
                     <p class="text-light fs-5 mb-0"><?php ?></p>

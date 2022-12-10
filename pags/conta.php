@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -83,8 +83,8 @@
             <nav aria-label="breadcrumb animated slideInDown">
                 <ol class="breadcrumb justify-content-center mb-0">
                     <li class="breadcrumb-item"><a class="text-white" href="#">Home</a></li>
-                    <li class="breadcrumb-item"><a class="text-primary" href="#">Páginas</a></li>
-                    <li class="breadcrumb-item text-white" aria-current="page">Sobre</li>
+                    <li class="breadcrumb-item"><a class="text-white" href="#">Páginas</a></li>
+                    <li class="breadcrumb-item text-white" aria-current="page"><a class="text-primary" href="#">Sobre</a></li>
                 </ol>
             </nav>
         </div>
@@ -94,49 +94,51 @@
 
 	<form method="POST">
 
-    <div class="container-xxl py-6">
+    <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
-                <h1 class="display-6 mb-4">Bem-Vindo</h1>
+                <p class="text-primary text-uppercase mb-2">// Conta</p>
+                <h1 class="display-6 mb-4">Bem-vindo! Essa é Área de Usuário</h1>
             </div>
+
             <div class="row g-0 justify-content-center">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
                     <form method="post">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" name="email_a" placeholder="Alterar Email">
-                                    <label for="name">Alterar Email</label>
+                                    <input type="email" class="form-control" id="name" name="email_a" placeholder="Alterar E-mail">
+                                    <label for="name">Alterar E-mail</label>
                                 </div>
                                 <div class="col-12 text-center mt-2">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="c_gmail" onclick="Alterar_email($email, $email_a)" type="submit">Alterar Email</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="c_gmail" onclick="Alterar_email($email, $email_a)" type="submit">Alterar E-mail</button>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Adicionar Email de Recuperação">
-                                    <label for="email">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="Adicionar E-mail de Recuperação">
+                                    <label for="email">E-mail de Recuperação</label>
                                 </div>
                                 <div class="col-12 text-center mt-2">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="add_email" onclick="Add_email($email, $email_add)" type="submit">Adicionar Email</button>
+                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="add_email" onclick="Add_email($email, $email_add)" type="submit">Adicionar E-mail</button>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="alter_senha" name="senha" placeholder="Senha atual">
-                                    <label for="alter_senha">Assunto</label>
+                                    <input type="number" class="form-control" id="alter_senha" name="senha" placeholder="Senha atual">
+                                    <label for="alter_senha">Senha atual</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="a_senha" placeholder="Nova senha">
-                                    <label for="message">Mensagem</label>
+                                    <input type="number" class="form-control" id="novaSenha" name="a_senha" placeholder="Nova senha">
+                                    <label for="novaSenha">Nova senha</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" name="con_senha" placeholder="Confirmar senha">
-                                    <label for="message">Mensagem</label>
+                                    <input type="number" class="form-control" id="confirmSenha" name="con_senha" placeholder="Confirmar senha">
+                                    <label for="confirmSenha">Confirmar senha</label>
                                 </div>
                             </div>
                             <div class="col-12 text-center">

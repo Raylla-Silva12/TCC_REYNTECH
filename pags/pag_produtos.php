@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="utf-8">
@@ -94,14 +94,11 @@
 
     <div class="container-xxl bg-light my-3 py-4 pt-0">
         <div class="container">
-          <!-- <div class="col-4">
-            <div class="div-filtros bg-secondary rounded-2" style="--bs-bg-opacity: .2;">
-              <div class="input-group mb-3">
-                <input type="text" class="form-control border border-success" placeholder="Pesquisar" aria-label="Pesquisar" aria-describedby="button-addon2">
-                <button class="btn btn-outline-success" type="button" id="button-addon2">Button</button>
-              </div>
+          <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
+                <p class="text-primary text-uppercase mb-2">// PRODUTOS</p>
+                <h1 class="display-6 mb-4">Nossos Maravilhosos Produtos</h1>
             </div>
-          </div> -->
+          
           
           <div class="row g-4">
               <?php
@@ -113,7 +110,7 @@
 
                 while ($row = mysqli_fetch_assoc($result)) {
                   echo '
-                          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                          <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" data-bs-toggle="modal" data-bs-target="#ProdutoModal">
                             <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                               <div class="text-center p-4">';
                   echo '        <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">R$ '.number_format($row['vl_preco'], 2, ',', '.').'</div>';
@@ -130,7 +127,45 @@
                                   </div>
                               </div>
                             </div>
-                          </div>';
+                          </div>
+                          
+
+                          <!-- Modal -->
+                          <div class="modal fade" id="ProdutoModal" tabindex="-1" aria-labelledby="ProdutoModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                              <div class="modal-content">
+                                <div class="modal-header">
+                                  <h1 class="modal-title fs-5" id="ProdutoModalLabel">'.$row['nm_produto'].'</h1>
+                                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+
+                                  <div class="row">
+                                    <div class="col-lg-6">
+                                      <img class="img-fluid border border-2 border-primary p-2 mb-2 rounded" src="../admin/db_admin/'.$row['ft_produto_principal'].'" alt="">
+                                    </div>
+                                    
+                                    <div class="col-lg-6 ms-auto">
+                                      <h2>R$ '.number_format($row['vl_preco'], 2, ',', '.').'</h2>
+                                      <h6>Descrição do Produto</h6>
+                                      <p>'.$row['ds_produto'].'</p>
+                                      <h6>Estoque</h6>
+                                      <p>'.$row['qtd_produto'].'</p>
+                                      <p><a href="curiosidades.php">Curiosidades</a></p>
+                                    </div>
+                                  </div>
+
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                                  <button type="button" class="btn btn-primary"><a class="text-white" href="carrinho.php?acao=add&id=' . $row['cd_produto'] . '">Adicionar ao Carrinho</a></button>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+
+                          ';
                 }
               ?>
           </div>
