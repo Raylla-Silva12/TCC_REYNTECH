@@ -1,4 +1,5 @@
     <!-- Navbar Start -->
+    <?php session_start(); ?>
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="text-primary m-0">M&S Garden</h1>

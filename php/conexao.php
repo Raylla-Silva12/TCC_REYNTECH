@@ -67,6 +67,7 @@ function Login($email, $senha) {
 		//armazenando dados da sessão
 		$_SESSION['email'] = $usuario['ds_email'];
 		$_SESSION['senha'] = $usuario['ds_senha'];
+
         header('Location: ../index.php');
     } else {
         ?>
@@ -91,6 +92,7 @@ function Cadastrar($nome, $email, $senha, $celular) {
     if ($res) {
 		//Cadastrado
 		$email = $_SESSION['email'];
+		$nome = $_SESSION['nome'];
 		header('Location: ../php/sendEmail.php');
 	} else {
 		echo "error";
@@ -101,86 +103,4 @@ function Cadastrar($nome, $email, $senha, $celular) {
 
 
 
-// FUNÇÃO DE ALTERAR EMAIL
-function Alterar_email($email, $email_a){
 
-	$email_a = $_POST['email_a'];
-	$email = $_SESSION['email'];
-
-	$sql = 'UPDATE tb_usuario SET ds_email ="'. $email_a .'" WHERE ds_email = "'. $email .'";';
-	$res = $GLOBALS['mysqli']->query($sql);
-	
-	if ($res) {
-		//Alterado
-		?> <script> alert("E-mail Alterado -- Reinicie a sessão ") </script> <?php
-		echo "<script>window.location = '../index.php'</script>";
-	} else {
-		//Erro
-		?> <script> alert("ERRO") </script> <?php
-	}
-}    
-// FIM DA FUNÇÃO DE ALTERAR EMAIL
-
-
-
-// FUNÇÃO DE FUNÇÃO DE ADD EMAIl
-function Add_email($email, $email_add){
-
-	$email_add = $_POST['email_add'];
-	$email = $_SESSION['email'];
-
-	$sql = 'UPDATE tb_usuario SET ds_email_recuperacao ="'. $email_add .'" WHERE ds_email = "'. $email .'";';
-	$res = $GLOBALS['mysqli']->query($sql);
-	
-	if ($res) {
-		//Alterado
-		?> <script> alert("E-mail Adicionado") </script> <?php
-	} else {
-		//Erro
-		?> <script> alert("ERRO") </script> <?php
-	}
-}    
-// FIM DA FUNÇÃO DE ADD EMAIl
-
-
-
-// FUNÇÃO DE ALTERAR SENHA
-function Alterar_senha($email, $a_senha, $senha){
-
-	$a_senha = $_POST['a_senha'];
-	$email = $_SESSION['email'];
-	$senha = $_POST['senha'];
-	$con_senha = $_POST['con_senha'];
-
-	$sql = 'SELECT * FROM tb_usuario WHERE ds_email="' . $email . '"';
-	$sql .= ' AND ds_senha ="' . $senha . '"';
-	$res = $GLOBALS['mysqli']->query($sql);
-
-	if ($res->num_rows > 0) {
-
-		if ($con_senha == $a_senha){
-			$sql = 'UPDATE tb_usuario SET ds_senha ="'. $a_senha .'" WHERE ds_email = "'. $email .'";';
-			$res = $GLOBALS['mysqli']->query($sql);
-
-			if ($res) {
-				//Alterado
-				?> <script> alert("Senha Alterada"); </script> <?php
-			}else{
-				//Erro
-				?> <script> alert("ERRO"); </script> <?php
-			}
-		}
-
-		if ($con_senha != $a_senha){
-			//Senhas Diferentes
-			?> 
-			<style>
-				#senha2 {
-					border-color: red;
-				}
-			</style> 
-			<script> alert("Senha Incorreta") </script> <?php
-		}
-	}
-}
-// FIM DA FUNÇÃO DE ALTERAR SENHA

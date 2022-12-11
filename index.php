@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -84,9 +85,12 @@
                 </div>
             </div>
             <div class="d-none d-lg-flex">
-                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle">
-                    <a href="pags/login.php"><i class="bi bi-person-fill text-primary"></i></a>
-                </div>
+                <a href="pags/carrinho.php" >
+                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle mx-2"><i class="bi bi-cart text-primary"></i></div>
+                </a>
+                <a href="pags/login.php">
+                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle"><i class="bi bi-person-fill text-primary"></i></div>
+                </a>
                 <div class="ps-3">
                     <small class="text-primary mb-0"><?php ?></small>
                     <p class="text-light fs-5 mb-0"><?php ?></p> 
@@ -136,8 +140,8 @@
 
 
     <!-- About Start -->
-    <div class="container-xxl py-6">
-        <div class="container" id="inicio">
+    <div class="container-xxl py-6" id="inicio">
+        <div class="container">
             <div class="row g-5">
                 <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="row img-twice position-relative h-100">

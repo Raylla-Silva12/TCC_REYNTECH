@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -92,8 +93,6 @@
     <!-- Page Header End -->
     
 
-	<form method="POST">
-
     <div class="container-xxl py-4">
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 500px;">
@@ -103,50 +102,62 @@
 
             <div class="row g-0 justify-content-center">
                 <div class="col-lg-8 wow fadeInUp" data-wow-delay="0.1s">
-                    <form method="post">
+                    <form method="POST" action="../php/configConta.php">
+                        <?php echo $mensagem; ?>
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="name" name="email_a" placeholder="Alterar E-mail">
-                                    <label for="name">Alterar E-mail</label>
-                                </div>
-                                <div class="col-12 text-center mt-2">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="c_gmail" onclick="Alterar_email($email, $email_a)" type="submit">Alterar E-mail</button>
+                                    <input type="email" class="form-control" id="alterEmail" name="alterEmail" placeholder="Alterar E-mail">
+                                    <label for="alterEmail">Alterar E-mail</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Adicionar E-mail de Recuperação">
-                                    <label for="email">E-mail de Recuperação</label>
-                                </div>
-                                <div class="col-12 text-center mt-2">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" name="add_email" onclick="Add_email($email, $email_add)" type="submit">Adicionar E-mail</button>
+                                    <input type="email" class="form-control" id="addEmail" name="addEmail" placeholder="Adicionar E-mail de Recuperação">
+                                    <label for="addEmail">E-mail de Recuperação</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="alter_senha" name="senha" placeholder="Senha atual">
-                                    <label for="alter_senha">Senha atual</label>
+                                    <input type="password" class="form-control" id="atualSenha" name="atualSenha" placeholder="Senha Atual">
+                                    <label for="atualSenha">Senha atual</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="novaSenha" name="a_senha" placeholder="Nova senha">
+                                    <input type="password" class="form-control" id="novaSenha" name="novaSenha" placeholder="Nova Senha">
                                     <label for="novaSenha">Nova senha</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="number" class="form-control" id="confirmSenha" name="con_senha" placeholder="Confirmar senha">
+                                    <input type="password" class="form-control" id="confirmSenha" name="confirmSenha" onchange="senhaDiff2()" placeholder="Confirmar Senha">
                                     <label for="confirmSenha">Confirmar senha</label>
                                 </div>
                             </div>
                             <div class="col-12 text-center">
-                                <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Alterar Senha</button>
+                                <button class="btn btn-primary rounded-pill py-3 px-5" id="botao" type="submit">Confirmar</button>
                             </div>
                             <p>
-        <a href="../php/logout.php">Sair</a>
-    </p>
+                                <a href="../php/logout.php">Sair</a>
+                            </p>
+
+                            <script>
+                                function senhaDiff2() {
+                                    var senha1 = document.getElementById("novaSenha").value;
+                                    var senha2 = document.getElementById("confirmSenha").value;
+                                    
+                                    if (senha2 != senha1) {
+                                            document.getElementById('confirmSenha').style.borderColor = 'red';
+                                            document.getElementById('confirmSenha').style.color = 'red';
+                                            document.getElementById("botao").disabled = true;
+                                    } else {
+                                            document.getElementById('confirmSenha').style.borderColor = 'green';
+                                            document.getElementById('confirmSenha').style.color = 'green';
+                                    }
+                                }
+                            </script>
+
                         </div>
                     </form>
                 </div>
@@ -154,24 +165,19 @@
         </div>
     </div>
 
-
-</body>
-<?php
-
-    //ALTERAR E-MAIL
-        if(isset($_POST["c_gmail"])){
-            Alterar_email($_SESSION['email'], $_SESSION['email_a']);
+    <style>
+        input[type="number"]::-webkit-outer-spin-button,
+        input[type="number"]::-webkit-inner-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0;
         }
+
+        input[type="number"] {
+            -moz-appearance: textfield !important;
+        }
+    </style>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
-    //ADD E-MAIL
-        if (isset($_POST["add_email"])) {
-            Add_email($_SESSION['email'], $_POST['email_add']); 
-        }
-    
-    //ALTERAR SENHA
-        if (isset($_POST["c_pass"])) {
-            Alterar_senha($_SESSION['email'], $_POST['a_senha'], $_POST['senha'], $_POST['con_senha']); 
-        }
-    ?>
+    <?php include('footer2.php'); ?>
 
-<?php include('footer2.php'); ?>
