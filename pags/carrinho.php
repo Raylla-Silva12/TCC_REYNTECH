@@ -160,7 +160,10 @@
         
             <div class="float-right">
               <button type="button"  onclick="voltar()" class="btn btn-lg btn-default md-btn-flat mt-2 mr-3">Voltar as compras</button>
-              <button type="button"  onclick="comprar()" class="btn btn-lg btn-primary mt-2">Confirmar Compra</button>
+             
+              <a aria-label="Chat on WhatsApp" href="https://wa.me/5513988562691">
+                <button type="button"  onclick="comprar()" class="btn btn-lg btn-primary mt-2">Confirmar Compra</button>
+              </a>
             </div>
             ';
           ?>

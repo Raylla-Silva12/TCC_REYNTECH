@@ -13,7 +13,6 @@ CREATE TABLE IF NOT EXISTS tb_usuario (
   ds_email_recuperacao VARCHAR(60) NULL,
   ds_senha VARCHAR(20) NOT NULL,
   nr_celular VARCHAR(11) NOT NULL,
-  ft_usuario VARCHAR(100) NULL,
   PRIMARY KEY (cd_usuario)
 );
 

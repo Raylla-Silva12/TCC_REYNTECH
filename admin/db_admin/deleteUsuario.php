@@ -4,7 +4,7 @@
     if (isset($_POST['deletesend'])) {
         $unique = $_POST['deletesend'];
 
-        $sql = "DELETE FROM tb_produto WHERE cd_produto=$unique";
+        $sql = "DELETE FROM tb_usuario WHERE cd_usuario=$unique";
         $result = mysqli_query($mysqli, $sql);
     }
 ?>

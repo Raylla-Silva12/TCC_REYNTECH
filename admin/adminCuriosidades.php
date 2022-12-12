@@ -13,12 +13,12 @@
             <img src="../assets/logo.png" width="34" height="28" alt="logo"> 
             <a class="navbar-brand mx-3" href="#"><h2>M&S Garden</h2></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav bg-light">
-                    <a class="nav-link active" aria-current="page" href="admin.php">Produtos</a>
-                    <!-- <a class="nav-link text-dark" href="adminCuriosidades.php">Curiosidades</a> -->
+                    <a class="nav-link text-dark" aria-current="page" href="admin.php">Produtos</a>
+                    <a class="nav-link active" href="adminCuriosidades.php">Curiosidades</a>
                     <a class="nav-link text-dark" href="adminUsuarios.php">Usuários</a>
                 </div>
                 <div class="logout-icon">
@@ -33,7 +33,7 @@
   
     <style>
         .logout-icon {
-            margin-left: 70vw;
+            margin-left: 64vw;
         }
 
         /* ADM */
@@ -193,7 +193,7 @@
             <div class="modal-dialog modal-fullscreen">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalToggleLabel">Editar Produto</h5>
+                        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">

@@ -59,7 +59,7 @@ h6,
     transition: .5s;
 }
 
-.btn:hover {    
+.btn:hover {
     background-color: #eaa536ca !important;
     border-color: #eaa536ca !important;
 }
@@ -431,3 +431,18 @@ h6,
     color: var(--light);
 }
 
+/* Login Admin */
+
+.fundo-admin {
+    background-image: url(../../img/fundo.png);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
+}

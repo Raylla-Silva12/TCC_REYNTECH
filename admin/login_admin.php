@@ -1,5 +1,5 @@
 <?php include('../pags/header.php'); ?>
-<link rel="stylesheet" href="../css/estilo.css">
+<link rel="stylesheet" href="css/style.css">
 
 <body class="fundo-admin">
 
@@ -19,10 +19,10 @@
 
 				<section>
 					<div class="container mt-5 pt-5">
-						<div class="row">
-							<div class="col-12 col-sm-12 col-md-8 col-lg-6 m-auto">
-								<div class="card border-0">
-									<div class="card-body shadow-lg">
+						<div class="row mt-5">
+							<div class="col-12 col-sm-12 col-md-8 col-lg-6 py-5 m-auto">
+								<div class="card border-0 py-2 shadow-lg">
+									<div class="card-body">
 										<a href="../index.php"><button type="button" class="btn-close" aria-label="Close"></button></a>
 										<img class="rounded mx-auto d-block" src="../assets/cactu.gif" alt="Logo" height="120px" width="150px">
 										<form action="php/login.php" method="POST">

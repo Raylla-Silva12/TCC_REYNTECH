@@ -59,7 +59,7 @@ h6,
     transition: .5s;
 }
 
-.btn:hover {    
+.btn:hover {
     background-color: #eaa536ca !important;
     border-color: #eaa536ca !important;
 }
@@ -429,4 +429,20 @@ h6,
 
 .copyright a:hover {
     color: var(--light);
+}
+
+/* Login e Cadastrar */
+
+.fundo-login-cad {
+    background-image: url(../img/14.PNG);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance: textfield;
 }

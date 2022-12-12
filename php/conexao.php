@@ -83,20 +83,23 @@ function Login($email, $senha) {
 
 // FUNÇÃO DE CADASTRAR
 function Cadastrar($nome, $email, $senha, $celular) {
-	$img = 1;
 
-	$sql = 'INSERT INTO tb_usuario (cd_usuario, nm_usuario, dt_ingresso, ds_email, ds_email_recuperacao, ds_senha, nr_celular, id_imagem_usuario) 
-	VALUES (null, "'. $nome .'", NOW(), "' . $email . '", null , "' . $senha . '", "' . $celular . '", "' . $img . '");';
+	$sql = 'INSERT INTO tb_usuario (cd_usuario, nm_usuario, dt_ingresso, ds_email, ds_email_recuperacao, ds_senha, nr_celular) 
+	VALUES (null, "'. $nome .'", NOW(), "' . $email . '", null , "' . $senha . '", "' . $celular .'");';
 	$res = $GLOBALS['mysqli']->query($sql);
 
     if ($res) {
 		//Cadastrado
 		$email = $_SESSION['email'];
 		$nome = $_SESSION['nome'];
-		header('Location: ../php/sendEmail.php');
+		header('Location: sendEmail.php');
 	} else {
-		echo "error";
 		//erro ao cadastrar
+		?>
+        <script>
+            alert("Usuário não cadastrado.");
+        </script>
+        <?php
 	}
 }
 // FIM FUNÇÃO DE CADASTRAR

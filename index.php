@@ -15,7 +15,9 @@
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet"> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet">
 
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
@@ -34,7 +36,8 @@
 
 <body>
     <!-- Spinner Start -->
-    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div id="spinner"
+        class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
         <div class="spinner-grow text-primary" role="status"></div>
     </div>
     <!-- Spinner End -->
@@ -52,8 +55,10 @@
             </div>
             <div class="col-lg-6 px-5 text-end">
                 <div class="h-100 d-inline-flex align-items-center">
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i class="fab fa-whatsapp"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i
+                            class="fab fa-facebook-f"></i></a>
+                    <a class="btn-lg-square text-primary border-end rounded-0" href=""><i
+                            class="fab fa-whatsapp"></i></a>
                     <a class="btn-lg-square text-primary pe-0" href=""><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
@@ -85,23 +90,28 @@
                 </div>
             </div>
             <div class="d-none d-lg-flex">
-                <a href="pags/carrinho.php" >
-                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle mx-2"><i class="bi bi-cart text-primary"></i></div>
+                <a href="pags/carrinho.php">
+                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle mx-2"><i
+                            class="bi bi-cart text-primary"></i></div>
                 </a>
 
                 <?php
-                    if (!isset($_SESSION['email']) && !isset($_SESSION['senha'])) {
-                        echo '
+                if (!isset($_SESSION['email']) && !isset($_SESSION['senha'])) {
+                    echo '
                             <a href="pags/login.php">
                                 <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle"><i class="bi bi-person-fill text-primary"></i></div>
                             </a>
                         ';
-                    }
+                }
                 ?>
 
                 <div class="ps-3">
-                    <small class="text-primary mb-0"><?php ?></small>
-                    <p class="text-light fs-5 mb-0"><?php ?></p> 
+                    <small class="text-primary mb-0">
+                        <?php ?>
+                    </small>
+                    <p class="text-light fs-5 mb-0">
+                        <?php ?>
+                    </p>
                 </div>
             </div>
         </div>
@@ -120,7 +130,8 @@
                             <div class="col-lg-8">
                                 <p class="text-primary text-uppercase fw-bold mb-2">// saúde, paz e bem-estar</p>
                                 <h1 class="display-1 text-light mb-4 animated slideInDown">Plantamos Com Amor</h1>
-                                <p class="text-light fs-5 mb-4 pb-3">Quem tem planta em casa está rodeado de paz, luz e alegria!</p>
+                                <p class="text-light fs-5 mb-4 pb-3">Quem tem planta em casa está rodeado de paz, luz e
+                                    alegria!</p>
                                 <a href="#inicio" class="btn btn-primary rounded-pill py-3 px-5">Vamos lá</a>
                             </div>
                         </div>
@@ -135,7 +146,8 @@
                             <div class="col-lg-8">
                                 <p class="text-primary text-uppercase fw-bold mb-2">// saúde, paz e bem-estar</p>
                                 <h1 class="display-1 text-light mb-4 animated slideInDown">Plantamos Com Amor</h1>
-                                <p class="text-light fs-5 mb-4 pb-3">Quem tem planta em casa está rodeado de paz, luz e alegria!</p>
+                                <p class="text-light fs-5 mb-4 pb-3">Quem tem planta em casa está rodeado de paz, luz e
+                                    alegria!</p>
                                 <a href="#inicio" class="btn btn-primary rounded-pill py-3 px-5">Vamos lá</a>
                             </div>
                         </div>
@@ -165,8 +177,12 @@
                     <div class="h-100">
                         <p class="text-primary text-uppercase mb-2">// Sobre nós</p>
                         <h1 class="display-6 mb-4">Sempre Disponibilizando o Melhor aos Nossos Clientes</h1>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
+                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
+                            Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                        </p>
+                        <p>Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos.
+                            Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet
+                        </p>
                         <div class="row g-2 mb-4">
                             <div class="col-sm-6">
                                 <i class="fa fa-check text-primary me-2"></i>Produtos de Qualidade
@@ -197,7 +213,7 @@
                 <h1 class="display-6 mb-4">Produtos em Alta</h1>
             </div>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">R$ 20,00</div>
@@ -207,12 +223,13 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">R$ 20,00</div>
@@ -222,12 +239,13 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">R$ 20,00</div>
@@ -237,12 +255,13 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill px-3 mb-3">R$ 20,00</div>
@@ -252,12 +271,13 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">R$ 20,00</div>
@@ -267,12 +287,13 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s" data-bs-toggle="modal" data-bs-target="#Produto">
                     <div class="product-item d-flex flex-column bg-white rounded overflow-hidden h-100">
                         <div class="text-center p-4">
                             <div class="d-inline-block border border-primary rounded-pill pt-1 px-3 mb-3">R$ 20,00</div>
@@ -282,20 +303,56 @@
                         <div class="position-relative mt-auto">
                             <img class="img-fluid" src="img/inicio.PNG" alt="">
                             <div class="product-overlay">
-                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i class="fa fa-eye text-primary"></i></a>
+                                <a class="btn btn-lg-square btn-outline-light rounded-circle" href=""><i
+                                        class="fa fa-eye text-primary"></i></a>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="wow fadeInUp d-flex justify-content-center" data-wow-delay="0.5s">
-                    <a href="#" class="btn btn-primary rounded-pill py-3 px-5 w-50">Veja Mais</a>
+                    <a href="pags/pag_produtos.php" class="btn btn-primary rounded-pill py-3 px-5 w-50">Veja Mais</a>
                 </div>
             </div>
         </div>
     </div>
     <!-- Product End -->
 
+    <!-- Modal -->
+    <div class="modal fade" id="Produto" tabindex="-1" aria-labelledby="ProdutoModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="ProdutoModalLabel">Planta</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <img class="img-fluid border border-2 border-primary p-2 mb-2 rounded" src="img/inicio.PNG" alt="">
+                        </div>
+
+                        <div class="col-lg-6 ms-auto">
+                            <h2>R$ 20,00</h2>
+                            <h6>Descrição do Produto</h6>
+                            <p>Perfumada</p>
+                            <h6>Estoque</h6>
+                            <p>37</p>
+                            <p><a href="pags/curiosidades.php">Curiosidades</a></p>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary"><a class="text-white"
+                            href="pags/carrinho.php?acao=add&id=1">Adicionar ao
+                            Carrinho</a></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <?php
     include('pags/footer.php');
     ?>
-    
