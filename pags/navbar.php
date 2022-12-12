@@ -1,5 +1,9 @@
     <!-- Navbar Start -->
-    <?php session_start(); ?>
+    <?php 
+        session_start(); 
+        include_once("../php/conexao.php");
+    ?>
+
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top py-lg-0 px-lg-5 wow fadeIn" data-wow-delay="0.1s">
         <a href="../index.php" class="navbar-brand ms-4 ms-lg-0">
             <h1 class="text-primary m-0">M&S Garden</h1>
@@ -25,9 +29,17 @@
                 <a href="carrinho.php" >
                     <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle mx-2"><i class="bi bi-cart text-primary"></i></div>
                 </a>
-                <a href="login.php">
-                    <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle"><i class="bi bi-person-fill text-primary"></i></div>
-                </a>
+
+                <?php
+                    if (!isset($_SESSION['email']) && !isset($_SESSION['senha'])) {
+                        echo '
+                            <a href="login.php">
+                                <div class="flex-shrink-0 btn-lg-square border border-light rounded-circle"><i class="bi bi-person-fill text-primary"></i></div>
+                            </a>
+                        ';
+                    }
+                ?>
+
                 <div class="ps-3">
                     <small class="text-primary mb-0"><?php ?></small>
                     <p class="text-light fs-5 mb-0"><?php ?></p>

@@ -1,4 +1,12 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+    include_once("../php/conexao.php");
+
+    if (!isset($_SESSION['email']) && !isset($_SESSION['senha'])) {
+        header("Location: login.php");
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 

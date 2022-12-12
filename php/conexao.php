@@ -20,8 +20,8 @@ function LoginAdmin($user_adm, $senha_adm){
     if ($res->num_rows > 0) { //ENCONTROU O USUÁRIO
 		$usuario = $res->fetch_array(); //array com os dados
 		//armazenando dados da sessão
-		$_SESSION['admin'] = $usuario['nm_admin'];
-		$_SESSION['senha'] = $usuario['ds_senha'];
+		$_SESSION['user_adm'] = $usuario['nm_admin'];
+		$_SESSION['senha_adm'] = $usuario['ds_senha'];
         header('Location: ../admin/admin.php');
     } else {
         ?>

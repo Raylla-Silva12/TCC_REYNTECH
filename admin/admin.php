@@ -1,14 +1,75 @@
 <?php
-
-session_start();
-include_once("../php/conexao.php");
+    session_start();
+    include_once('../php/protect_admin.php');
+    include_once("../php/conexao.php");
 ?>
 
 <body>
-    <link rel="stylesheet" href="css/estilo_adm.css">
-    <a href="../index.php">Voltar</a>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
-    <h3 class='my-3 mx-3'>Produtos</h3>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+            <img src="../assets/logo.png" width="34" height="28" alt="logo"> 
+            <a class="navbar-brand mx-3" href="#"><h2>M&S Garden</h2></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav bg-light">
+                    <a class="nav-link active" aria-current="page" href="admin.php">Produtos</a>
+                    <a class="nav-link text-dark" href="#">Curiosidades</a>
+                    <a class="nav-link text-dark" href="#">Usuários</a>
+                </div>
+                <div class="logout-icon">
+                    <a href="logoutAdmin.php" class="mx-4">
+                        <img src="../assets/logout.svg" class="bg primary" width="35" height="35" alt="logout">  
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- FIM NAVBAR -->
+  
+    <style>
+        .logout-icon {
+            margin-left: 64vw;
+        }
+
+        /* ADM */
+        input[type="file"] {
+            display: none;
+        }
+
+        .label-file {
+            padding: 16px 16px;
+            border: 1px solid var(--secondary);
+            color: var(--secondary);
+            display: block;
+            cursor: pointer;
+        }
+
+        .label-file:hover {
+            background-color: var(--primary); 
+            opacity: 0.8;
+            border: 1px solid var(--primary);
+            color: white;
+        }
+
+        .input-file {
+            border-left: 1px solid var(--secondary) !important;
+            background-color: white !important;
+        }
+
+        .add_Categoria {
+            display: none !important;
+        }
+
+        .add_Categoria_btn {
+            border-start-end-radius: 8px !important;
+            border-end-end-radius: 8px !important;
+        }
+    </style>
 
     <!-- Modal de Cadastro -->
     <form method="POST" id="addForm" enctype="multipart/form-data">
@@ -113,8 +174,8 @@ include_once("../php/conexao.php");
                     </div>
 
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-dark">Salvar</button>
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+                        <button type="submit" class="btn btn-primary">Salvar</button>
                     </div>
                 </div>
             </div>
@@ -128,67 +189,132 @@ include_once("../php/conexao.php");
 
 
     <!-- Modal de Edição -->
-    <div class="modal fade" id="updateModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-        <div class="modal-dialog modal-fullscreen">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <div class="form-group">
-                        <label for="nomeProduto">Nome do Produto</label>
-                        <input type="text" class="form-control" id="nomeProdutoAlter" placeholder="Nome do Produto">
+    <div class="modal fade" id="updateModal" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" data-static tabindex="-1">
+            <div class="modal-dialog modal-fullscreen">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalToggleLabel">Modal 1</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
-                    <div class="form-group">
-                        <label for="valorProduto">Valor</label>
-                        <input type="number" class="form-control" id="valorProdutoAlter" placeholder="Valor">
-                    </div>
-                    <div class="form-group">
-                        <label for="descricaoProduto">Descrição</label>
-                        <input type="text" class="form-control" id="descricaoProdutoAlter" placeholder="Descrição">
-                    </div>
-                    <div class="form-group">
-                        <label for="qtdProduto">Quantidade</label>
-                        <input type="text" class="form-control" id="qtdProdutoAlter" placeholder="Quantidade">
-                    </div>
-                    <div class="form-group">
-                        <label for="categoriaProduto">Categoria</label>
-                        <input type="number" class="form-control" id="categoriaProdutoAlter" placeholder="Categoria">
-                    </div>
-                    <div class="form-group">
-                        <script>
-                            $(document).ready(function() {
-                                $("#imagemProdutoAlter").change(function() {
-                                    var nomeImgAlter = $('#imagemProdutoAlter').val();
-                                    $("#status-input-alter").val("Arquivo selecionado: " + nomeImgAlter);
-                                });
-                            });
-                        </script>
+                    <div class="modal-body">
+                        
+                        <div clas="px-4">
+                    
+                            <div class="row g-4">
+                                <div class="col-md py-2">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="nomeProdutoAlter" placeholder="Nome do Produto">
+                                        <label for="nomeProdutoAlter">Nome do Produto</label>
+                                    </div>
+                                </div>
+                                <div class="col-md py-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="valorProdutoAlter" placeholder="Valor">
+                                        <label for="valorProdutoAlter">Valor do Produto</label>
+                                    </div>
+                                </div> 
+                            </div>
 
-                        <div class="input-group mb-3">
-                            <input type="file" class="form-control" id="imagemProdutoAlter" name="imagemProdutoAlter">
-                            <label for="file" class="label-file rounded-start">Selecione uma Imagem</label>
-                            <input type="text" class="form-control input-file" id="status-input-alter" value="Arquivo não selecionado" disabled>
+                            <div class="row g-4">
+                                <div class="col-md py-2">
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Bela rosa..." id="descricaoProdutoAlter"></textarea>
+                                        <label for="descricaoProdutoAlter">Descrição do Produto</label>
+                                    </div>
+                                </div>
+
+                                <div class="col-md py-2">
+                                    <div class="form-floating">
+                                        <input type="number" class="form-control" id="qtdProdutoAlter" placeholder="3">
+                                        <label for="qtdProdutoAlter">Quantidade do Produto</label>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div class="row g-4">
+                                <div class="col-md py-2">
+                                    <div class="input-group">
+                                        <select class="form-select py-3" id="select">
+                                            <option selected>Categoria do Produto</option>
+
+                                            <?php
+                                            $sql = "SELECT * FROM tb_categoria";
+                                            $res = mysqli_query($mysqli, $sql);
+
+                                            while ($row = mysqli_fetch_assoc($res)) {
+                                                echo "<option id='categoriaProduto' value='" . $row['cd_categoria'] . "'>" . $row['cd_categoria'] . "- " . $row['nm_categoria'] . "</option>";
+                                            };
+                                            ?>
+
+                                        </select>
+
+                                        <script>
+                                            $(document).ready(function() {
+                                                $("#btn").click(function() {
+                                                    $("#addCat").toggleClass("add_Categoria");
+                                                    $("#btn").toggleClass("add_Categoria_btn");
+                                                    $("#btnSalvar").toggleClass("add_Categoria");
+                                                });
+                                            });
+                                        </script>
+
+                                        <button class="btn btn-outline-secondary add_Categoria_btn" id="btn" type="button">Add</button>
+                                        <input type="text" id="addCat" class="form-control add_Categoria" placeholder="Adicionar Categoria" onchange="addCat()">
+                                        <button class="btn btn-outline-secondary add_Categoria_btn add_Categoria" id="btnSalvar" onclick="salvarCat()" type="button">+</button>
+                                    </div>
+                                </div>
+
+                                <div class="col-md py-2">
+
+                                    <script>
+                                        $(document).ready(function() {
+                                            $("#file").change(function() {
+                                                var nomeImg = $('#file').val();
+                                                $("#status-input").val("Arquivo selecionado: " + nomeImg);
+                                            });
+                                        });
+                                    </script>
+
+                                    <div class="input-group mb-3">
+                                        <input type="file" class="form-control" id="file" name="file">
+                                        <label for="file" class="label-file rounded-start">Selecione uma Imagem</label>
+                                        <input type="text" class="form-control input-file" id="status-input" value="Arquivo não selecionado" disabled>
+                                    </div>
+                                </div>
+
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-dark" onclick="updateDetails()">Alterar</button>
-                    <input type="hidden" id="hiddendata">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-primary" onclick="updateDetails()">Alterar</button>
+                        <input type="hidden" id="hiddendata">
+                    </div>
                 </div>
             </div>
-        </div>
     </div>
     <!-- Fim do Modal de Edição -->
 
 
     <div id="displayAdmin"></div>
+    
+     <!-- Copyright Start -->
+     <div class="container-fluid copyright text-light py-4 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    &copy; <a href="#">REYNTECH</a>, All Right Reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
 
 
-    <?php include('../pags/footer.php'); ?>
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
     <script>
         $(document).ready(function() {

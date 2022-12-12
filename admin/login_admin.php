@@ -9,11 +9,12 @@
 			<form method="POST">
 
 				<?php
-				session_start();
-				include_once("../php/conexao.php");
-				if (isset($_POST['user_adm'])) {
-					LoginAdmin($_POST['user_adm'], $_POST['senha_adm']);
-				}
+					session_start();
+					include_once("../php/conexao.php");
+					
+					if (isset($_POST['user_adm'])) {
+						LoginAdmin($_POST['user_adm'], $_POST['senha_adm']);
+					}
 				?>
 
 				<section>
